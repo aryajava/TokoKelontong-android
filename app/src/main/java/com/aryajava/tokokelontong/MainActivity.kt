@@ -26,7 +26,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setUpBottomNav()
+    }
 
+    fun setUpBottomNav(){
         fm.beginTransaction().add(R.id.container, fragmentHome).show(fragmentHome).commit()
         fm.beginTransaction().add(R.id.container, fragmentKeranjang).hide(fragmentKeranjang).commit()
         fm.beginTransaction().add(R.id.container, fragmentAkun).hide(fragmentAkun).commit()
@@ -39,28 +42,23 @@ class MainActivity : AppCompatActivity() {
         bottonNavigationView.setOnNavigationItemSelectedListener { item ->
             when(item.itemId){
                 R.id.navigation_home -> {
-                    Log.d("Response", "Home")
-                    menuItem = menu.getItem(0)
-                    menuItem.isChecked = true
-                    fm.beginTransaction().hide(active).show(fragmentHome).commit()
-                    active = fragmentHome
+                    callFragment(0,fragmentHome)
                 }
                 R.id.navigation_keranjang -> {
-                    Log.d("Response", "Keranjang")
-                    menuItem = menu.getItem(1)
-                    menuItem.isChecked = true
-                    fm.beginTransaction().hide(active).show(fragmentKeranjang).commit()
-                    active = fragmentKeranjang
+                    callFragment(1,fragmentKeranjang)
                 }
                 R.id.navigation_akun -> {
-                    Log.d("Response", "Akun")
-                    menuItem = menu.getItem(2)
-                    menuItem.isChecked = true
-                    fm.beginTransaction().hide(active).show(fragmentAkun).commit()
-                    active = fragmentAkun
+                    callFragment(2,fragmentAkun)
                 }
             }
             false
         }
+    }
+
+    fun callFragment(int:Int, fragment: Fragment){
+        menuItem = menu.getItem(int)
+        menuItem.isChecked = true
+        fm.beginTransaction().hide(active).show(fragment).commit()
+        active = fragment
     }
 }

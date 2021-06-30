@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.aryajava.tokokelontong.activity.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.aryajava.tokokelontong.activity.ui.keranjang.KeranjangFragment"
+        android:label="@string/title_keranjang"
+        tools:layout="@layout/fragment_keranjang" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.aryajava.tokokelontong.activity.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:name="com.aryajava.tokokelontong.activity.ui.akun.AkunFragment"
+        android:label="@string/title_akun"
         tools:layout="@layout/fragment_akun" />
 </navigation>

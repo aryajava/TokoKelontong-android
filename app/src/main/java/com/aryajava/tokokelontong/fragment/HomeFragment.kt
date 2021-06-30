@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager.widget.ViewPager
 import com.aryajava.tokokelontong.R
+import com.aryajava.tokokelontong.adapter.AdapterSlider
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -27,6 +28,13 @@ class HomeFragment : Fragment() {
     ): View? {
         val view:View = inflater.inflate(R.layout.fragment_home, container, false)
         vpSlider = view.findViewById(R.id.vp_slider)
+        val arrSlider = ArrayList<Int>()
+        arrSlider.add(R.drawable.slider1)
+        arrSlider.add(R.drawable.slider2)
+
+        val adapterSlider = AdapterSlider(arrSlider, activity)
+        vpSlider.adapter =adapterSlider
+
         return view
     }
 }

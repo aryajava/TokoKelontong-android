@@ -7,4 +7,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cari">Cari disini</string>
+    <string name="new_product">Produk Terbaru</string>
+    <string name="ic_chat">icon_chat</string>
+    <string name="ic_produk">icon_produk</string>
 </resources>
